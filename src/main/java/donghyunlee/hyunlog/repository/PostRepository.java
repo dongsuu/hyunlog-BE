@@ -3,10 +3,8 @@ package donghyunlee.hyunlog.repository;
 import donghyunlee.hyunlog.domain.Category;
 import donghyunlee.hyunlog.domain.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
