@@ -19,10 +19,6 @@ public class BaseEntity {
     @Column(name = "created_date", nullable = false, updatable = false)
     private LocalDateTime createdDate;
 
-    @CreatedBy
-    @Column(name = "created_by", nullable = false, updatable = false)
-    private String createdBy;
-
     @LastModifiedDate
     @Column(name = "last_modified_date", nullable = false)
     private LocalDateTime lastModifiedDate;
