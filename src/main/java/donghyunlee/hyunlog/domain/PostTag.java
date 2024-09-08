@@ -3,6 +3,7 @@ package donghyunlee.hyunlog.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -26,4 +27,9 @@ public class PostTag extends BaseEntity{
     @JoinColumn(name = "tag_id")
     private Tag tag;
 
+    @Builder
+    public PostTag(Post post, Tag tag) {
+        this.post = post;
+        this.tag = tag;
+    }
 }
