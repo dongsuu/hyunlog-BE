@@ -22,4 +22,10 @@ public class Tag extends BaseEntity{
     private Tag(String name) {
         this.name = name;
     }
+
+    public static Tag createTag(String name){
+        return Tag.builder()
+                .name(name)
+                .build();
+    }
 }
