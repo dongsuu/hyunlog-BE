@@ -1,7 +1,7 @@
 package donghyunlee.hyunlog.dto;
 
-import donghyunlee.hyunlog.domain.Category;
 import donghyunlee.hyunlog.domain.ImageFile;
+import donghyunlee.hyunlog.domain.Post;
 import donghyunlee.hyunlog.domain.Tag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,4 +23,16 @@ public class PostDto {
     private String categoryName;
     private List<Tag> tags = new ArrayList<>();
     private List<ImageFile> imageFiles = new ArrayList<>();
+
+    public static PostDto of(Post post, List<Tag> tags){
+        return PostDto.builder()
+                .id(post.getId())
+                .title(post.getTitle())
+                .content(post.getContent())
+                .authorName(post.getMember().getName())
+                .categoryName(post.getCategory().getName())
+                .imageFiles(post.getImageFiles())
+                .tags(tags)
+                .build();
+    }
 }
