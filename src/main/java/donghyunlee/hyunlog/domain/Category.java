@@ -17,11 +17,18 @@ public class Category extends BaseEntity{
     private Long id;
 
     private String name;
-    private int order;
+    private int sortOrder;
 
     @Builder
     private Category(String name, int order) {
         this.name = name;
-        this.order = order;
+        this.sortOrder = order;
+    }
+
+    public static Category createCategory(String name, int order){
+        return Category.builder()
+                .name(name)
+                .order(order)
+                .build();
     }
 }
